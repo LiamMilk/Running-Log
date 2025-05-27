@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ username }}'s Weekly Running Plan</h2>
+<div class="row mt-3">
+    <div class="col">
+        <h4>Total Miles This Week: {{ weekly_miles }}</h4>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        {% for day_info in week_dates %}
+        <div class="col bg-light text-dark m-2 p-3 border rounded {% if day_info.date == today %} bg-warning text-red {% endif %}">
+            <h5>{{ day_info.date }}</h5>
+            <h3>{{ day_info.day }}</h3>
+            {% if day_info.date in activities %}
+            <div>
+                {% set details = activities[day_info.date].split(",") %}
+                <p>Miles: {{ details[0] }}</p>
+                <p>Time: {{ details[1] }}</p>
+                <p>Description: {{ details[2] }}</p>
+            </div>
+            {% else %}
+            <p class="text-muted">No activity. Please enter an activity.</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="d-flex justify-content-between mt-4">
+    <a href="{{ url_for('view_calendar', start_date=prev_week_start) }}" class="btn btn-secondary">Previous Week</a>
+    <a href="{{ url_for('view_calendar', start_date=next_week_start) }}" class="btn btn-secondary">Next Week</a>
+</div>
+<a href="{{ url_for('add_activity') }}" class="btn btn-primary mt-3">Add Activity</a>
+{% endblock %}

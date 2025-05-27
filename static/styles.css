@@ -1,0 +1,128 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    margin-bottom: 20px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #555;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* Header */
+h2 {
+    color: #333;
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Forms */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+/* Flash Messages */
+.alert-info {
+    margin-top: 20px;
+    background-color: #cce5ff;
+    color: #004085;
+    border-color: #b8daff;
+}
+
+/* Calendar */
+.container {
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.col {
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-height: 150px;
+    flex: 1;
+    text-align: center;
+}
+
+.bg-primary {
+    background-color: #007bff !important;
+}
+
+.bg-warning {
+    background-color: #ffc107 !important;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-dark {
+    color: #343a40;
+}
+
+.text-muted {
+    color: #6c757d;
+}
+
+/* Activity List */
+.text-muted {
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-nav {
+        text-align: center;
+    }
+}

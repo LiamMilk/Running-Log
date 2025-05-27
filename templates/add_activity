@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add Activity for {{ date }}</h2>
+
+<form action="{{ url_for('add_activity', date=date) }}" method="POST">
+    <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type = "date" id="date" name="date" class="form-control" value="{{ date }}" required>
+    </div>
+    <div class="mb-3">
+        <label for="miles" class="form-label">Miles Ran</label>
+        <input type="number" id="miles" name="miles" class="form-control" step="0.1" required>
+    </div>
+    <div class="mb-3">
+        <label for="time" class="form-label">Time Ran</label>
+        <input id="time" name="time" class="form-control" placeholder="e.g., 24 minutes 30 seconds" required>
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea id="description" name="description" class="form-control" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Save Activity</button>
+</form>
+
+<a href="{{ url_for('view_calendar') }}" class="btn btn-secondary mt-3">Back to Calendar</a>
+{% endblock %}
